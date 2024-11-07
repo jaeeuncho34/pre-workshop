@@ -5,7 +5,7 @@ var relearn_searchindex = [
     "description": "Package installation for node configuration are covered in this chapter. Please click the next button \u003e on the right side of this page.",
     "tags": [],
     "title": "Kaia Installation",
-    "uri": "/10_kaia_installation/index.html"
+    "uri": "/pre-workshop/10_kaia_installation/index.html"
   },
   {
     "breadcrumb": "",
@@ -13,7 +13,7 @@ var relearn_searchindex = [
     "description": "In this chapter, you will set the Pre-Mainnet network configuration. Please click the next button \u003e on the right side of this page.",
     "tags": [],
     "title": "Kaia Configuration",
-    "uri": "/20_kaia_configuration/index.html"
+    "uri": "/pre-workshop/20_kaia_configuration/index.html"
   },
   {
     "breadcrumb": "",
@@ -21,7 +21,7 @@ var relearn_searchindex = [
     "description": "Install telegraf for monitoring. Please click the next button \u003e on the right side of this page.",
     "tags": [],
     "title": "Monitoring Setup",
-    "uri": "/30_monitoring_setup/index.html"
+    "uri": "/pre-workshop/30_monitoring_setup/index.html"
   },
   {
     "breadcrumb": "",
@@ -29,7 +29,7 @@ var relearn_searchindex = [
     "description": "Now, we are ready to start Pre-Mainnet service. Please click the next button \u003e on the right side of this page.",
     "tags": [],
     "title": "Start the services",
-    "uri": "/40_start_the_services/index.html"
+    "uri": "/pre-workshop/40_start_the_services/index.html"
   },
   {
     "breadcrumb": "",
@@ -37,7 +37,7 @@ var relearn_searchindex = [
     "description": "Congratulations!! Now, you are playing in the Pre-Mainnet network.",
     "tags": [],
     "title": "Conclusion",
-    "uri": "/50_conclusion/index.html"
+    "uri": "/pre-workshop/50_conclusion/index.html"
   },
   {
     "breadcrumb": "Kaia Installation",
@@ -45,7 +45,7 @@ var relearn_searchindex = [
     "description": " 1. CCN Diagram CCN consists of one CN node and two PN nodes. 2. Network architecture Full mesh connection should be made between CNs. So, You need to configure the firewall to allow ingress between nodes. For communication and multichannel between CN, allow TCP 32323-32324 and UDP 32323 to your firewall ingress rule. We will share CN node IPs for Pre-Mainnet configuration separately.",
     "tags": [],
     "title": "Network Diagram",
-    "uri": "/10_kaia_installation/10_system_diagram/index.html"
+    "uri": "/pre-workshop/10_kaia_installation/10_system_diagram/index.html"
   },
   {
     "breadcrumb": "Kaia Configuration",
@@ -53,7 +53,7 @@ var relearn_searchindex = [
     "description": " 1. (Only for CN) Firewall configuration 1) For communication and multichannel between kaia CN, allow TCP 32323-32324 with below IP addresses to your firewall ingress rule. 210.109.52.54 210.109.52.222 35.213.154.116 15.235.219.80 147.92.139.235 147.92.139.230 147.92.139.231 147.92.139.232 147.92.139.233 147.92.139.234 35.213.163.233 47.237.2.159 52.79.244.19 Your PN IP 2) Additionally, it is required to allow UDP 32323 with the same IP addresses to your firewall ingress rule. 210.109.52.54 210.109.52.222 35.213.154.116 15.235.219.80 147.92.139.235 147.92.139.230 147.92.139.231 147.92.139.232 147.92.139.233 147.92.139.234 35.213.163.233 47.237.2.159 52.79.244.19 52.199.8.244 Your PN IP 3) For communication, allow all traffic to your firewall egress rule. IP version | Type | Protocol | Port range | Destination -------------------------------------------------------------------------------------- IPv4 | All traffic | All | All | 0.0.0.0/0",
     "tags": [],
     "title": "Firewall Configuration",
-    "uri": "/20_kaia_configuration/10_firewall_configuration/index.html"
+    "uri": "/pre-workshop/20_kaia_configuration/10_firewall_configuration/index.html"
   },
   {
     "breadcrumb": "Start the services",
@@ -61,7 +61,7 @@ var relearn_searchindex = [
     "description": " 1. Start the Kaia service, if it is running 1) For CN $ sudo systemctl status kcnd $ sudo systemctl start kcnd $ sudo systemctl status kcnd 2) For PN $ sudo systemctl status kpnd $ sudo systemctl start kpnd $ sudo systemctl status kpnd If the services are not installed from yum, you can start the service like below $ sudo \u003cinstallation_path\u003e/kcnd status $ sudo \u003cinstallation_path\u003e/kcnd start $ sudo \u003cinstallation_path\u003e/kcnd status",
     "tags": [],
     "title": "Start the services",
-    "uri": "/40_start_the_services/10_start_the_services/index.html"
+    "uri": "/pre-workshop/40_start_the_services/10_start_the_services/index.html"
   },
   {
     "breadcrumb": "Monitoring Setup",
@@ -69,7 +69,7 @@ var relearn_searchindex = [
     "description": " 1. Telegraf Installation Telegraf Installation Guide (Amazon Linux 2 users, see below):\nhttps://docs.influxdata.com/telegraf/latest/introduction/installation/ Note To install Telegraph on Amazon Linux 2, you may use InfluxData’s RHEL 7 yum repo as follows:\ncat \u003c\u003cEOF | sudo tee /etc/yum.repos.d/influxdb.repo [influxdb] name = InfluxDB Repository - RHEL 7 baseurl = https://repos.influxdata.com/rhel/7/\\$basearch/stable enabled = 1 gpgcheck = 1 gpgkey = https://repos.influxdata.com/influxdata-archive_compat.key EOF If you finish this step, please click the next button \u003e on the right side of this page.",
     "tags": [],
     "title": "Telegraf Installation",
-    "uri": "/30_monitoring_setup/10_telegraf_installation/index.html"
+    "uri": "/pre-workshop/30_monitoring_setup/10_telegraf_installation/index.html"
   },
   {
     "breadcrumb": "Kaia Installation",
@@ -77,7 +77,7 @@ var relearn_searchindex = [
     "description": " 1. System Requirement (for cloud) Recommended Specification for AWS\nNode Type Model vCPU Memory (GiB) Storage size (GiB) Storage speed (IOPS) Price (Seoul region, USD/h) CN m6i.8xlarge 32 128 4,000 (Minimum) 4,000 (Minimum) 1.92 PN (with Live Pruning DB) m6i.2xlarge 8 32 3,500 (Minimum) 4,000 (Minimum) 0.472 Recommended Specification for Azure\nNode Type Model vCPU Memory (GiB) Storage size (GiB) Storage speed (IOPS) Price (Seoul Central, USD/h) CN D32s v5 32 128 P50 (4096) 7500 1.625 PN (with Live Pruning DB) D8s v5 8 32 P50 (4096) 7500 0.472",
     "tags": [],
     "title": "System Requirement",
-    "uri": "/10_kaia_installation/20_system_requirement/index.html"
+    "uri": "/pre-workshop/10_kaia_installation/20_system_requirement/index.html"
   },
   {
     "breadcrumb": "Kaia Configuration",
@@ -85,7 +85,7 @@ var relearn_searchindex = [
     "description": " The CN configuration is to create a data directory and set up several values in the configuration file.\nCreate the data/log directory. Install node key. Configure the CN(PN) with kcnd.conf (kpnd.conf). 1. Data, Log Directory Creation Considering the fact that the size of Kaia blockchain data is always increased. It is recommended to use a big enough storage. You may need to create the directory on your desired path.\n1) CN $ mkdir -p /var/kcnd/data $ mkdir -p /var/kcnd/logs",
     "tags": [],
     "title": "Kaia Configuration",
-    "uri": "/20_kaia_configuration/20_configuration/index.html"
+    "uri": "/pre-workshop/20_kaia_configuration/20_configuration/index.html"
   },
   {
     "breadcrumb": "Start the services",
@@ -93,7 +93,7 @@ var relearn_searchindex = [
     "description": " 1. Generate BLS key on CN only - Only for Bughole and Certik Go to Data_Dir where nodekey is\n$ sudo kcn account bls-info klay.ipc Successfully wrote 'bls-publicinfo-0x***********.json' send ‘bls-publicinfo-0x***********.json’ file via slack thread You can check the more details requirements on the page below.\nhttps://klaytn.foundation/bls-kip-113-114/ If you finish this step, please click the next button \u003e on the right side of this page.",
     "tags": [],
     "title": "generate BLS key",
-    "uri": "/40_start_the_services/20_generate_bls_key/index.html"
+    "uri": "/pre-workshop/40_start_the_services/20_generate_bls_key/index.html"
   },
   {
     "breadcrumb": "Monitoring Setup",
@@ -101,7 +101,7 @@ var relearn_searchindex = [
     "description": " 1. Enable monitoring in kcnd/kpnd Check the if below two options enabled.\n/etc/kcnd/conf/kcnd.conf\n... METRICS=1 PROMETHEUS=1 ... If two options enabled, You may check port 61001 is open.\n$ netstat -ntap | grep 61001 tcp 0 0 :::61001 :::* LISTEN 8989/kcn 2. Configure Telegraf service Create new telegraf configuration file as klaytn.conf under below path and add the following the configuration.\n/etc/telegraf/telegraf.d/\nEdit ’nodetype’, ‘instance’, and ‘hostname’ appropriately for each node.",
     "tags": [],
     "title": "Telegraf Configuration",
-    "uri": "/30_monitoring_setup/20_telegraf_configuration/index.html"
+    "uri": "/pre-workshop/30_monitoring_setup/20_telegraf_configuration/index.html"
   },
   {
     "breadcrumb": "Kaia Configuration",
@@ -109,7 +109,7 @@ var relearn_searchindex = [
     "description": " 0. Please, execute sudo -i before this progress 1. Copy genesis.json under DATA directory Genesis file download : https://github.com/kaia.ios-setup-workshop/blob/main/genesis/pre-cypress-genesis.json\n## For CN $ curl -X GET https://packages.kaia.iopress/genesis.json -o /var/kcnd/data/genesis.json ## For PN $ curl -X GET https://packages.kaia.iopress/genesis.json -o /var/kpnd/data/genesis.json 2. Init Genesis block under DATA directory 1) CN configuration $ kcn --networkid 6337 init --datadir /var/kcnd/data genesis.json 2) PN configuration $ kpn --networkid 6337 init --datadir /var/kpnd/data genesis.json",
     "tags": [],
     "title": "Init Genesis Block",
-    "uri": "/20_kaia_configuration/30_init_genesis_block/index.html"
+    "uri": "/pre-workshop/20_kaia_configuration/30_init_genesis_block/index.html"
   },
   {
     "breadcrumb": "Kaia Installation",
@@ -117,7 +117,7 @@ var relearn_searchindex = [
     "description": " 1. Linux Archive Distribution The archive file consists of the executable binary and the configuration file structured as follows.\nFor CN node : kcn / kcnd For PN node : kpn / kpnd - bin |- kcn |- kcnd - conf |- kcnd.conf File Name | File Description -------------------------------------------------------- bin/kcn | CN executable file bin/kcnd | CN start/termination script file conf/kcnd.conf | CN configuration file Warning Do NOT alter the file structure or file name. If you change it, the node may not function correctly.",
     "tags": [],
     "title": "Package Installation",
-    "uri": "/10_kaia_installation/30_kaia_package_installation/index.html"
+    "uri": "/pre-workshop/10_kaia_installation/30_kaia_package_installation/index.html"
   },
   {
     "breadcrumb": "Start the services",
@@ -125,7 +125,7 @@ var relearn_searchindex = [
     "description": " 1. Watch the service log to confirm if your nodes are correctly joined Note If the node is not a proposer at that block and the consensus is successful, the node have executed(==validates) the block. In other words, a block is inserted.\n1) For CN $ tail \u003cyour_klaytn_home_path\u003e/kcnd/log/kcnd.out INFO Inserted a new block number=14 hash=13cbfc…f007fc txs=0 gas=0 elapsed=793.458µs processTxs=167ns finalize=157.708µs validateState=7.542µs totalWrite=443.417µs trieWrite=256.667µs 2) For PN $ tail \u003cyour_klaytn_home_path\u003e/kpnd/log/kpnd.out INFO Inserted a new block number=14 hash=13cbfc…f007fc txs=0 gas=0 elapsed=793.458µs processTxs=167ns finalize=157.708µs validateState=7.542µs totalWrite=443.417µs trieWrite=256.667µs",
     "tags": [],
     "title": "Check the services",
-    "uri": "/40_start_the_services/30_check_the_services/index.html"
+    "uri": "/pre-workshop/40_start_the_services/30_check_the_services/index.html"
   },
   {
     "breadcrumb": "",
@@ -133,7 +133,7 @@ var relearn_searchindex = [
     "description": "",
     "tags": [],
     "title": "Categories",
-    "uri": "/categories/index.html"
+    "uri": "/pre-workshop/categories/index.html"
   },
   {
     "breadcrumb": "",
@@ -141,6 +141,6 @@ var relearn_searchindex = [
     "description": "",
     "tags": [],
     "title": "Tags",
-    "uri": "/tags/index.html"
+    "uri": "/pre-workshop/tags/index.html"
   }
 ]

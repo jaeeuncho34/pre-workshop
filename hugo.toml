@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = '/pre-workshop'
 languageCode = 'en-us'
 title = 'Kaia CCO Onboarding - Pre-Mainnet'
 

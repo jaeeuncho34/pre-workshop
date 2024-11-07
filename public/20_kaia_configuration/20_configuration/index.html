@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.1.1">
+    <meta name="description" content=" The CN configuration is to create a data directory and set up several values in the configuration file.
+Create the data/log directory. Install node key. Configure the CN(PN) with kcnd.conf (kpnd.conf). 1. Data, Log Directory Creation Considering the fact that the size of Kaia blockchain data is always increased. It is recommended to use a big enough storage. You may need to create the directory on your desired path.
+1) CN $ mkdir -p /var/kcnd/data $ mkdir -p /var/kcnd/logs">
+    <meta name="author" content="Kaia DevOps team">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Kaia Configuration - Kaia CCO Onboarding - Pre-Mainnet">
+    <meta name="twitter:description" content=" The CN configuration is to create a data directory and set up several values in the configuration file.
+Create the data/log directory. Install node key. Configure the CN(PN) with kcnd.conf (kpnd.conf). 1. Data, Log Directory Creation Considering the fact that the size of Kaia blockchain data is always increased. It is recommended to use a big enough storage. You may need to create the directory on your desired path.
+1) CN $ mkdir -p /var/kcnd/data $ mkdir -p /var/kcnd/logs">
+    <meta property="og:url" content="http://localhost:1313/20_kaia_configuration/20_configuration/index.html">
+    <meta property="og:site_name" content="Kaia CCO Onboarding - Pre-Mainnet">
+    <meta property="og:title" content="Kaia Configuration - Kaia CCO Onboarding - Pre-Mainnet">
+    <meta property="og:description" content=" The CN configuration is to create a data directory and set up several values in the configuration file.
+Create the data/log directory. Install node key. Configure the CN(PN) with kcnd.conf (kpnd.conf). 1. Data, Log Directory Creation Considering the fact that the size of Kaia blockchain data is always increased. It is recommended to use a big enough storage. You may need to create the directory on your desired path.
+1) CN $ mkdir -p /var/kcnd/data $ mkdir -p /var/kcnd/logs">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Kaia Configuration">
+    <meta property="article:published_time" content="2022-09-20T17:44:42+09:00">
+    <meta property="article:modified_time" content="2022-09-20T17:44:42+09:00">
+    <meta itemprop="name" content="Kaia Configuration - Kaia CCO Onboarding - Pre-Mainnet">
+    <meta itemprop="description" content=" The CN configuration is to create a data directory and set up several values in the configuration file.
+Create the data/log directory. Install node key. Configure the CN(PN) with kcnd.conf (kpnd.conf). 1. Data, Log Directory Creation Considering the fact that the size of Kaia blockchain data is always increased. It is recommended to use a big enough storage. You may need to create the directory on your desired path.
+1) CN $ mkdir -p /var/kcnd/data $ mkdir -p /var/kcnd/logs">
+    <meta itemprop="datePublished" content="2022-09-20T17:44:42+09:00">
+    <meta itemprop="dateModified" content="2022-09-20T17:44:42+09:00">
+    <meta itemprop="wordCount" content="354">
+    <title>Kaia Configuration - Kaia CCO Onboarding - Pre-Mainnet</title><link rel="shortcut icon" href="/images/Logo-2.png" type="image/x-icon" />
+
+
+    <link href="/css/fontawesome-all.min.css?1730882345" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1730882345" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1730882345" rel="stylesheet">
+    <link href="/css/auto-complete.css?1730882345" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1730882345" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1730882345" rel="stylesheet">
+    <link href="/css/fonts.css?1730882345" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1730882345" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1730882345" rel="stylesheet">
+    <link href="/css/theme-kaia.css?1730882345" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-light.css?1730882345" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/print.css?1730882345" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1730882345"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.variants && variants.init( [ 'kaia' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/20_kaia_configuration/20_configuration/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-data-log-directory-creation">1. Data, Log Directory Creation</a></li>
+        <li><a href="#2-install-nodekey">2. Install Nodekey</a></li>
+        <li><a href="#3-install-bls-nodekey-for-cn-only">3. Install BLS-Nodekey for CN only</a></li>
+        <li><a href="#4-update-the-configuration-file">4. Update the Configuration File</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Kaia Configuration
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/20_kaia_configuration/10_firewall_configuration/index.html" title="Firewall Configuration (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/20_kaia_configuration/30_init_genesis_block/index.html" title="Init Genesis Block (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable 20_kaia_configuration" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="kaia-configuration">Kaia Configuration</h1>
+
+<p> </p>
+<blockquote>
+<p>The CN configuration is to create a data directory and set up several values in the configuration file.</p>
+</blockquote>
+<ul>
+<li>Create the data/log directory.</li>
+<li>Install node key.</li>
+<li>Configure the CN(PN) with <code>kcnd.conf</code> (<code>kpnd.conf</code>).
+ 
+ </li>
+</ul>
+<h3 id="1-data-log-directory-creation">1. Data, Log Directory Creation</h3>
+<p>Considering the fact that the size of Kaia blockchain data is always increased.  </p>
+<p>It is recommended to use a big enough storage. You may need to create the directory on your desired path.</p>
+<p> </p>
+<h6 id="1-cn">1) CN</h6>
+<p><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ mkdir -p /var/kcnd/data</span></span></code></pre></div>
+
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ mkdir -p /var/kcnd/logs</span></span></code></pre></div>
+</p>
+<h6 id="2-pn">2) PN</h6>
+<p><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ mkdir -p /var/kpnd/data</span></span></code></pre></div>
+
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ mkdir -p /var/kpnd/logs</span></span></code></pre></div>
+
+ </p>
+<h3 id="2-install-nodekey">2. Install Nodekey</h3>
+<blockquote>
+<p>Nodekey is your Private key what you generate with Klay Tool.</p>
+</blockquote>
+<p><a href="#R-image-9ff9a6897783529548a7cd5b6056fd99" class="lightbox-link"><img alt="CCN" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/nodekey.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9ff9a6897783529548a7cd5b6056fd99"><img alt="CCN" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/nodekey.png"></a></p>
+<p>In order to operate a node, a <code>nodekey</code> is required. The KCN(KPN) binary will create a new one for you if you do not have it.  </p>
+<p>If you have one, you need to put your <code>nodekey</code> into the <code>data</code> directory.</p>
+<p><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ vi /var/kcnd/data/nodekey</span></span></code></pre></div>
+
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ cp nodekey /var/kcnd/data</span></span></code></pre></div>
+
+Set the PN node in the same way.</p>
+<p> 
+ </p>
+<h3 id="3-install-bls-nodekey-for-cn-only">3. Install BLS-Nodekey for CN only</h3>
+<blockquote>
+<p>BLS-Nodekey is your Private key what you generate with Klay Tool.</p>
+</blockquote>
+<p><a href="#R-image-297a78105ddcd5a9b832f0b1f90e6e98" class="lightbox-link"><img alt="CN" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/nodekey.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-297a78105ddcd5a9b832f0b1f90e6e98"><img alt="CN" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/nodekey.png"></a></p>
+<p>In order to operate a node, a <code>bls-nodekey</code> is required. The KCN binary will create a new one for you if you do not have it.  </p>
+<p>If you have one, you need to put your <code>bls-nodekey</code> into the <code>data</code> directory.</p>
+<p><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ vi /var/kcnd/data/bls-nodekey</span></span></code></pre></div>
+
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ cp bls-nodekey /var/kcnd/data</span></span></code></pre></div>
+</p>
+<p> 
+ </p>
+<h3 id="4-update-the-configuration-file">4. Update the Configuration File</h3>
+<blockquote>
+<p>Configuration File Location:</p>
+</blockquote>
+<h6 id="for-the-archive-distribution-the-config-directory-location-defaults-to-install_pathkcn-linux-amd64conf">For the archive distribution, the config directory location defaults to <code>$INSTALL_PATH/kcn-linux-amd64/conf/</code>.</h6>
+<h6 id="for-the-package-distribution-the-config-directory-defaults-to-etckcndconf">For the package distribution, the config directory defaults to <code>/etc/kcnd/conf/</code>.</h6>
+<p> </p>
+<h6 id="1-add-configuration-for-cn">1) Add configuration for CN</h6>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span># <span style="color:#a6e22e">NETWORK</span>=<span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NETWORK_ID</span>=<span style="color:#ae81ff">6336</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">DATA_DIR</span>=<span style="color:#e6db74">/var/</span><span style="color:#a6e22e">kcnd</span>/<span style="color:#a6e22e">data</span>  # <span style="color:#a6e22e">path</span> <span style="color:#a6e22e">where</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">created</span> <span style="color:#a6e22e">in</span> #<span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">LOG_DIR</span>=<span style="color:#e6db74">/var/</span><span style="color:#a6e22e">kcnd</span>/<span style="color:#a6e22e">logs</span> # <span style="color:#a6e22e">path</span> <span style="color:#a6e22e">where</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">created</span> <span style="color:#a6e22e">in</span> #<span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NO_DISCOVER</span>=<span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">BOOTNODES</span>=<span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">REWARDBASE</span>=<span style="color:#e6db74">&#34;&#34;</span> # <span style="color:#a6e22e">ADD</span> <span style="color:#a6e22e">YOUR</span> <span style="color:#a6e22e">REWARDS</span> <span style="color:#a6e22e">ADDRESS</span> <span style="color:#a6e22e">GENERATED</span> <span style="color:#a6e22e">BY</span> <span style="color:#a6e22e">KEYTOOL</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ADDITIONAL</span>=<span style="color:#e6db74">&#34;--state.trie-cache-limit 5000 --state.live-pruning&#34;</span></span></span></code></pre></div>
+<h6 id="2--add-configuration-for-pn">2)  Add configuration for PN</h6>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span># <span style="color:#a6e22e">NETWORK</span>=<span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NETWORK_ID</span>=<span style="color:#ae81ff">6336</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">DATA_DIR</span>=<span style="color:#e6db74">/var/</span><span style="color:#a6e22e">kpnd</span>/<span style="color:#a6e22e">data</span>  # <span style="color:#a6e22e">path</span> <span style="color:#a6e22e">where</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">created</span> <span style="color:#a6e22e">in</span> #<span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">LOG_DIR</span>=<span style="color:#e6db74">/var/</span><span style="color:#a6e22e">kpnd</span>/<span style="color:#a6e22e">logs</span> # <span style="color:#a6e22e">path</span> <span style="color:#a6e22e">where</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">created</span> <span style="color:#a6e22e">in</span> #<span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NO_DISCOVER</span>=<span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">BOOTNODES</span>=<span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ADDITIONAL</span>=<span style="color:#e6db74">&#34;--state.trie-cache-limit 5000 --state.live-pruning&#34;</span></span></span></code></pre></div>
+<p> 
+ </p>
+<hr>
+<p> </p>
+<p><em>You can check the more information for installation on the page below.</em></p>
+<ul>
+<li>CN : <a href="https://docs.kaia.io/docs/nodes/core-cell/install/install-consensus-nodes/" rel="external" target="_blank">https://docs.kaia.io/docs/nodes/core-cell/install/install-consensus-nodes/</a></li>
+<li>PN : <a href="https://docs.kaia.io/docs/nodes/core-cell/install/install-proxy-nodes/" rel="external" target="_blank">https://docs.kaia.io/docs/nodes/core-cell/install/install-proxy-nodes/</a></li>
+</ul>
+<p> 
+ 
+ </p>
+<p>If you finish this step, please click the next button <code>&gt;</code> on the right side of this page.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a href=".."><img src="/images/Logo-2.png" ></a>
+
+
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1730882345";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1730882345" defer></script>
+        <script src="/js/lunr/lunr.min.js?1730882345" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1730882345" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1730882345" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1730882345" defer></script>
+        <script src="/js/search.js?1730882345" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/10_kaia_installation/index.html"><a class="padding" href="/10_kaia_installation/index.html"><b>1. </b>Kaia Installation<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-8270a4d981639493b155cfb345a588d9" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/20_kaia_configuration/index.html"><a class="padding" href="/20_kaia_configuration/index.html"><b>2. </b>Kaia Configuration<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e86d0a57b023cdc0907d1025c9105830" class="collapsible-menu">
+            <li class="" data-nav-id="/20_kaia_configuration/10_firewall_configuration/index.html"><a class="padding" href="/20_kaia_configuration/10_firewall_configuration/index.html"><b>A. </b>Firewall Configuration<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/20_kaia_configuration/20_configuration/index.html"><a class="padding" href="/20_kaia_configuration/20_configuration/index.html"><b>B. </b>Kaia Configuration<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/20_kaia_configuration/30_init_genesis_block/index.html"><a class="padding" href="/20_kaia_configuration/30_init_genesis_block/index.html"><b>C. </b>Init Genesis Block<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/30_monitoring_setup/index.html"><a class="padding" href="/30_monitoring_setup/index.html"><b>3. </b>Monitoring Setup<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c4561896131e30d8fd0da278290f5c2c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/40_start_the_services/index.html"><a class="padding" href="/40_start_the_services/index.html"><b>4. </b>Start the services<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-cc640d7492049f5805256fbad4520940" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/50_conclusion/index.html"><a class="padding" href="/50_conclusion/index.html"><b>5. </b>Conclusion<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          </ul>
+        </div>
+        <div id="R-shortcutmenu-shortcuts" class="R-sidebarmenu">
+          <div class="nav-title padding">More</div>
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="https://github.com/kaiachain/kaia"><a class="padding" href="https://github.com/kaiachain/kaia" target="_blank"><i class='fab fa-github'></i> Github repo<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="https://docs.kaia.io/"><a class="padding" href="https://docs.kaia.io/" target="_blank"><i class='fas fa-bookmark'></i> Kaia Documentation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="https://www.kaia.io/"><a class="padding" href="https://www.kaia.io/" target="_blank"><i class='fas fa-bullhorn'></i> Kaia DLT Foundation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/20_kaia_configuration/20_configuration/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-kaia" value="kaia" selected>Kaia</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter"><p>© Kaia Labs limited 2024. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1730882345" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1730882345" defer></script>
+    <script src="/js/d3/d3-color.min.js?1730882345" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1730882345" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1730882345" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1730882345" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1730882345" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1730882345" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1730882345" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1730882345" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1730882345" defer></script>
+    <script src="/js/js-yaml.min.js?1730882345" defer></script>
+    <script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js" defer></script>
+    <script>
+      window.themeUseMermaid = JSON.parse("{}");
+    </script>
+    <script src="/js/theme.js?1730882345" defer></script>
+  </body>
+</html>

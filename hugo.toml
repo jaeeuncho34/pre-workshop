@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = 'Kaia CCO Onboarding - Pre-Mainnet'
 
 theme = 'hugo-theme-relearn'
+canonifyURLs = true
 
 [params]
 themeVariant = 'kaia'

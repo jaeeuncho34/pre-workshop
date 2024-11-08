@@ -11,7 +11,7 @@ draft: false
 ### 1. CCN Diagram 
 >###### CCN consists of one CN node and two PN nodes.
 {{< line_break >}}
-![CCN](https://raw.githubusercontent.com/klaytn/klaytn-pre-cypress-setup-workshop/main/static/images/klaytn-1.png)
+![CCN](/images/klaytn-1.png)
 
 {{< line_break >}}
 {{< line_break >}}
@@ -26,7 +26,7 @@ draft: false
 {{< line_break >}}
 {{< line_break >}}
 
-![network](https://raw.githubusercontent.com/klaytn/klaytn-pre-cypress-setup-workshop/main/static/images/klaytn-2.png)
+![network](/images/klaytn-2.png)
 
 {{< line_break >}}
 {{< line_break >}}

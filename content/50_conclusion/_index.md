@@ -8,11 +8,11 @@ pre = "<b>5. </b>"
 
 ![Kaia_Logo](https://raw.githubusercontent.com/klaytn/klaytn-pre-cypress-setup-workshop/main/static/images/Logo-1.png)
 
-&nbsp; 
-&nbsp; 
+{{< line_break >}}
+{{< line_break >}}
 
 ### Congratulations!!
-&nbsp; 
+{{< line_break >}}
 ### Now, you are playing in the Pre-Mainnet network.
 
 
